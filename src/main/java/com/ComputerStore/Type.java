@@ -2,7 +2,7 @@ package com.ComputerStore;
 
 public enum Type {
 
-    BOOK, MAGAZINE, NEWSPAPER;
+    BOOK, MAGAZINE, NEWSPAPER, LAZERS;
 
     public String getString(){
         switch (this){

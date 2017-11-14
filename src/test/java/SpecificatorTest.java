@@ -3,6 +3,7 @@ import com.ComputerStore.Type;
 import org.junit.Test;
 
 import static junit.framework.TestCase.assertEquals;
+import static junit.framework.TestCase.assertFalse;
 import static junit.framework.TestCase.assertTrue;
 
 public class SpecificatorTest {
@@ -40,7 +41,19 @@ public class SpecificatorTest {
 
     @Test
     public void theSame() throws Exception{
-        Specificator specificator2 = new Specificator("Kek", "Taras Shevchenko", 540, 300, Type.BOOK);
+        Specificator specificator2 = new Specificator("Lol", "Ivan Syusyura", 234, 200, Type.BOOK);
         assertTrue(specificator.theSame(specificator2));
+
+        Specificator specificator3 = new Specificator("", "Taras", 0, 0, Type.BOOK);
+        assertFalse(specificator.theSame(specificator3));
+
+        Specificator specificator4 = new Specificator("Lol", "Taras", 0, 0, Type.BOOK);
+        assertFalse(specificator.theSame(specificator4));
+
+        Specificator specificator5 = new Specificator("Lol", "Ivan Syusyura", 0, 0, Type.MAGAZINE);
+        assertFalse(specificator.theSame(specificator5));
     }
+
+
+
 }

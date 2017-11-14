@@ -27,7 +27,7 @@ public class InventoryTest {
 
     @Test
     public void getBook() throws Exception{
-        assertEquals(inventory.getBook("Lol"), book);
+        assertTrue(inventory.getBook("Lol").theSame(book));
     }
 
     @Test
@@ -39,4 +39,3 @@ public class InventoryTest {
     }
 
 }
-
