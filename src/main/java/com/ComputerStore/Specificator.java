@@ -1,7 +1,5 @@
 package com.ComputerStore;
 
-import javax.jws.soap.SOAPBinding;
-
 public class Specificator{
 
     private String name, author;

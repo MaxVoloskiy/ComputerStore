@@ -39,15 +39,17 @@ public class Inventory {
         List<Book> matchingBooks = new LinkedList<Book>();
         for (Iterator<Book> iterator = books.iterator(); iterator.hasNext();) {
             Book book = (Book) iterator.next();
-            String author = searchBook.getAuthor();
-            if (book.getSpec().theSame(searchBook.getSpec())) {
+            String name = searchBook.getName();
+            if (!name.equals("") && book.getSpec().theSame(searchBook.getSpec())) {
                 continue;
             }
-
             matchingBooks.add(book);
         }
 
         return matchingBooks;
     }
-    ;
+
+    public List<Book> getBooks(){
+        return books;
+    }
 }
