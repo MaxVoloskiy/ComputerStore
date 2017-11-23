@@ -1,18 +1,14 @@
 package com.ComputerStore;
 
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.LinkedList;
 import java.util.List;
 
 public class Inventory {
 
-    public List<Book> books;
+    private List<Book> books;
 
 
-    public Inventory(){
-        books = new LinkedList<Book>();
-    }
+    public Inventory(){ books = new ArrayList<>();}
 
 
     public void addBook(String name, String author,
@@ -25,9 +21,8 @@ public class Inventory {
 
     public Book getBook(String name){
 
-        for (Iterator<Book> iterator = books.iterator(); iterator.hasNext();){
-            Book book = (Book)iterator.next();
-            if (book.getName().equals(name)){
+        for (Book book : books) {
+            if (book.getName().equals(name)) {
                 return book;
             }
         }
@@ -38,8 +33,7 @@ public class Inventory {
     public List search(Book searchBook){
 
         ArrayList<Book> matchingBooks = new ArrayList<>();
-        for (Iterator<Book> iterator = books.iterator(); iterator.hasNext();) {
-            Book book = (Book) iterator.next();
+        for (Book book : books) {
             String name = searchBook.getName();
             if (!name.equals("") && book.getSpec().theSame(searchBook.getSpec())) {
                 continue;

@@ -4,8 +4,8 @@ public class Specificator{
 
     private String name, author;
     private int pages;
-    public int price;
-    Type type;
+    private int price;
+    private Type type;
 
     public Specificator(String name, String author,
                         int pages, int price, Type type){
@@ -43,10 +43,7 @@ public class Specificator{
         if (!book.getAuthor().equals(this.getAuthor())){
             return false;
         }
-        if (!book.getType().equals(this.type)){
-            return false;
-        }
-        return true;
+        return book.getType().equals(this.type);
     }
 
 }

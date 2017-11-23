@@ -1,15 +1,15 @@
 import com.ComputerStore.Book;
-import com.ComputerStore.Specificator;
 import com.ComputerStore.Type;
 import org.junit.Test;
 
 import static junit.framework.TestCase.assertEquals;
-import static junit.framework.TestCase.assertFalse;
-import static junit.framework.TestCase.assertTrue;
 
 public class BookTest {
 
-    Book book = new Book("Lol", "Ivan Syusyura", 243, 100, Type.BOOK);
+    /**
+     *
+     */
+    private Book book = new Book("Lol", "Ivan Syusyura", 243, 100, Type.BOOK);
 
     @Test
     public void getType() throws Exception{
@@ -28,7 +28,7 @@ public class BookTest {
 
     @Test
     public void getPages() throws Exception{
-        assertEquals(243, book.getPages());
+        assertEquals(book.getPages(), 243);
     }
 
     @Test

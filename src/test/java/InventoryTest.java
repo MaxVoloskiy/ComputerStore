@@ -1,8 +1,6 @@
 import com.ComputerStore.Book;
 import com.ComputerStore.Inventory;
 import com.ComputerStore.Type;
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 
 import static junit.framework.TestCase.assertEquals;
@@ -32,9 +30,8 @@ public class InventoryTest {
         Inventory inventory = new Inventory();
         inventory.addBook("Lol", "Ivan Syusyura", 243, 100, Type.BOOK);
         Book book1 = new Book("Lol", "Ivan Syusyura", 243, 100, Type.BOOK);
-        Book cbook = (Book) inventory.getBooks().get(0);
-        System.out.println(inventory.search(book1));
-        //assertEquals(cbook.getName(), inventory.search(book1));
+        Book c_book = inventory.getBooks().get(0);
+        assertEquals(c_book.getName(), inventory.search(book1).get(0));
     }
 
     @Test
@@ -42,8 +39,9 @@ public class InventoryTest {
         Inventory inventory = new Inventory();
         inventory.addBook("Lol", "Ivan Syusyura", 243, 100, Type.BOOK);
         Book book = new Book("Lol", "Ivan Syusyura", 243, 100, Type.BOOK);
-        Book cbook = (Book) inventory.getBooks().get(0);
-        assertEquals(cbook.getName(), book.getName());
+        Book c_book;
+        c_book = inventory.getBooks().get(0);
+        assertEquals(c_book.getName(), book.getName());
     }
 
 }
