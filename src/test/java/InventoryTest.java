@@ -15,7 +15,7 @@ public class InventoryTest {
         Inventory inventory = new Inventory();
         inventory.addBook("Lol", "Ivan Syusyura", 243, 100, Type.BOOK);
         Book cbook = new Book("Lol", "Ivan Syusyura", 243, 100, Type.BOOK);
-        assertEquals(cbook.getSpec().getName(), inventory.getBook("Lol").getName());
+        assertEquals(cbook.getName(), inventory.getBook("Lol").getName());
     }
 
     @Test
@@ -24,15 +24,17 @@ public class InventoryTest {
         inventory.addBook("Lol", "Ivan Syusyura", 243, 100, Type.BOOK);
         Book book = new Book("Lol", "Ivan Syusyura", 243, 100, Type.BOOK);
         assertTrue(inventory.getBook("Lol").theSame(book));
+        assertEquals(null, inventory.getBook("Kek"));
     }
 
     @Test
     public void search() throws Exception{
         Inventory inventory = new Inventory();
         inventory.addBook("Lol", "Ivan Syusyura", 243, 100, Type.BOOK);
-        Book book = new Book("Lol", "Ivan Syusyura", 243, 100, Type.BOOK);
+        Book book1 = new Book("Lol", "Ivan Syusyura", 243, 100, Type.BOOK);
         Book cbook = (Book) inventory.getBooks().get(0);
-        assertEquals(cbook.getSpec().getName(), book.getSpec().getName());
+        System.out.println(inventory.search(book1));
+        //assertEquals(cbook.getName(), inventory.search(book1));
     }
 
     @Test
@@ -41,7 +43,7 @@ public class InventoryTest {
         inventory.addBook("Lol", "Ivan Syusyura", 243, 100, Type.BOOK);
         Book book = new Book("Lol", "Ivan Syusyura", 243, 100, Type.BOOK);
         Book cbook = (Book) inventory.getBooks().get(0);
-        assertEquals(cbook.getSpec().getName(), book.getSpec().getName());
+        assertEquals(cbook.getName(), book.getName());
     }
 
 }

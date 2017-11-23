@@ -12,8 +12,4 @@ public class Book extends Specificator implements Cloneable{
         return spec;
     }
 
-    @Override
-    protected Object clone() throws CloneNotSupportedException {
-        return super.clone();
-    }
 }
